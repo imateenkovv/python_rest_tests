@@ -2,7 +2,7 @@ from pydantic import BaseModel, HttpUrl
 from typing import List, Optional
 
 
-class UserData(BaseModel):
+class user_data(BaseModel):
     id: int
     email: str
     first_name: str
@@ -10,12 +10,12 @@ class UserData(BaseModel):
     avatar: HttpUrl  # автоматически проверит, что это валидный URL
 
 
-class SupportInfo(BaseModel):
+class support_info(BaseModel):
     url: Optional[HttpUrl]
     text: Optional[str]
 
 
-class MetaInfo(BaseModel):
+class meta_info(BaseModel):
     powered_by: Optional[str]
     upgrade_url: Optional[HttpUrl]
     docs_url: Optional[HttpUrl]
@@ -25,7 +25,7 @@ class MetaInfo(BaseModel):
     upgrade_cta: Optional[str]
 
 
-class GetUserResponse(BaseModel):
-    data: UserData
-    support: SupportInfo
-    _meta: Optional[MetaInfo]
+class get_user_response(BaseModel):
+    data: user_data
+    support: support_info
+    _meta: Optional[meta_info]
